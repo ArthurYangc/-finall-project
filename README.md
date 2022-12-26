@@ -84,7 +84,7 @@ python3 app.py
 ## FSM
 ![](https://github.com/ArthurYangc/-finall-project/blob/main/final%20project/picture/fsm.png)
 
-### state說明
+## state說明
 - user: 輸入start開始使用生活小助手
 - start: 選擇想要的功能
 - weather: 查詢天氣
