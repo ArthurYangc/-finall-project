@@ -70,7 +70,7 @@ python3 app.py
 
 
 ## FSM
-![](https://drive.google.com/drive/u/0/my-drive)
+![](https://drive.google.com/drive/u/0/my-drive](https://github.com/ArthurYangc/-finall-project/blob/main/final%20project/picture/fsm.png)
 ### state說明
 - user: 輸入start開始使用生活小助手
 - start: 選擇想要的功能
