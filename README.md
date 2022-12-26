@@ -67,8 +67,13 @@ python3 app.py
            
 
 ## 使用示範
-
-
+![](https://github.com/ArthurYangc/-finall-project/blob/main/final%20project/picture/130688.jpg)
+![](https://github.com/ArthurYangc/-finall-project/blob/main/final%20project/picture/130689.jpg)
+![](https://github.com/ArthurYangc/-finall-project/blob/main/final%20project/picture/130690.jpg)
+![](https://github.com/ArthurYangc/-finall-project/blob/main/final%20project/picture/130691.jpg)
+![](https://github.com/ArthurYangc/-finall-project/blob/main/final%20project/picture/130692.jpg)
+![](https://github.com/ArthurYangc/-finall-project/blob/main/final%20project/picture/130693.jpg)
+![](https://github.com/ArthurYangc/-finall-project/blob/main/final%20project/picture/130694.jpg)
 ## FSM
 ![](https://github.com/ArthurYangc/-finall-project/blob/main/final%20project/picture/fsm.png)
 ### state說明
