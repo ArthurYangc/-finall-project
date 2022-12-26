@@ -26,41 +26,31 @@ pipenv shell
    LINE_CHANNEL_ACCESS_TOKEN
    輸入`.env`檔
    
-
-4. install `ngrok`
+install `ngrok`
 
 ```shell
 sudo snap install ngrok
 ```
-5. run `ngrok` to deploy Line Chat Bot locally
+run `ngrok` to deploy Line Chat Bot locally
 ```shell
 ngrok http 8000
 ```
-6. execute app.py
+execute app.py
 ```shell
 python3 app.py
 ```
 
 ## 使用說明
 - 基本操作
-    - 所有用到英文的指令大小寫皆可
-    - 隨時輸入任何字若沒觸發到都會有提示
     - 以下三個指令皆可隨時輸入
-        - `restart`
-            - reset所有資訊
-        - `chat`
-            - 切換到聊天機器人模式
-        - `fsm`
-            - 傳回當前的fsm圖片
+        - `start`
+            - 回到初始頁
+       
 - 架構圖
-    1. 輸入`fitness`開始使用健身小幫手
-    2. 輸入性別 -> `男生`或`女生`
-    3. 輸入年齡 -> `整數`
-    4. 輸入身高 -> `整數`
-    5. 輸入體重 -> `整數`
-    6. 輸入一週運動的天數 -> `整數`
-    7. 以下分成`增肌`與`減脂`來加以說明
-- `增肌` 
+    1. 輸入`start`開始使用生活小助手
+    2. 輸入功能 -> `天氣` `貓咪` `吃飯`
+   
+- `天氣` 
     - `熱量`
         - 算出BMR與TDEE
         - `食物`
