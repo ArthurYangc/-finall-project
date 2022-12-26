@@ -70,7 +70,7 @@ python3 app.py
 
 
 ## FSM
-![](C:\Users\user\Desktop\fsm.png)
+![](https://drive.google.com/drive/u/0/my-drive)
 ### state說明
 - user: 輸入fitness開始使用健身小幫手
 - input_gender: 輸入男生或女生
