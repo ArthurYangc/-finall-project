@@ -14,29 +14,23 @@ load_dotenv()
 
 
 machine = TocMachine(
-    states=["user", "state1", "state2", "state3", "start", "weather","cat","eat","rice","noodle","dumpling"],
+    states=["user", "start", "weather","cat","eat","rice","noodle","dumpling"],
     transitions=[
         {
             "trigger": "advance",
             "source": "user",
-            "dest": "state1",
-            "conditions": "is_going_to_state1",
+            "dest": "start",
+            "conditions": "is_going_to_start",
         },
         {
             "trigger": "advance",
-            "source": "user",
-            "dest": "state2",
-            "conditions": "is_going_to_state2",
+            "source": "start",
+            "dest": "start",
+            "conditions": "is_going_to_start",
         },
         {
             "trigger": "advance",
-            "source": "user",
-            "dest": "state3",
-            "conditions": "is_going_to_state3",
-        },
-        {
-            "trigger": "advance",
-            "source": "user",
+            "source": "eat",
             "dest": "start",
             "conditions": "is_going_to_start",
         },
@@ -76,7 +70,7 @@ machine = TocMachine(
             "dest": "dumpling",
             "conditions": "is_going_to_dumpling",
         },
-        {"trigger": "go_back", "source": ["state1", "state2","state3","start", "weather","cat","eat","rice","noodle","dumpling"], "dest": "user"},
+        {"trigger": "go_back", "source": ["start", "weather","cat","eat","rice","noodle","dumpling"], "dest": "user"},
     ],
     initial="user",
     auto_transitions=False,
