@@ -97,7 +97,7 @@ python3 app.py
 
 
 ## FSM
-![]((http://127.0.0.1:8000/show-fsm))
+![]([http://127.0.0.1:8000/show-fsm])
 ### state說明
 - user: 輸入fitness開始使用健身小幫手
 - input_gender: 輸入男生或女生
