@@ -7,49 +7,6 @@ class TocMachine(GraphMachine):
     def __init__(self, **machine_configs):
         self.machine = GraphMachine(model=self, **machine_configs)
 
-    def is_going_to_state1(self, event):
-        text = event.message.text
-        return text.lower() == "go to state1"
-
-    def is_going_to_state2(self, event):
-        text = event.message.text
-        return text.lower() == "go to state2"
-
-    def is_going_to_state3(self, event):
-        text = event.message.text
-        return text.lower() == "go to state3"
-
-    def on_enter_state1(self, event):
-        print("I'm entering state1")
-
-        reply_token = event.reply_token
-        send_text_message(reply_token, "Trigger state1")
-        self.go_back()
-
-    def on_exit_state1(self):
-        print("Leaving state1")
-
-    def on_enter_state2(self, event):
-        print("I'm entering state2")
-
-        reply_token = event.reply_token
-        send_text_message(reply_token, "Trigger state2")
-        self.go_back()
-    
-    def on_exit_state2(self):
-        print("Leaving state2")
-
-    def on_enter_state3(self, event):
-        print("I'm entering state3")
-
-        reply_token = event.reply_token
-        send_text_message(reply_token, "Trigger state3")
-        self.go_back()
-        
-    def on_exit_state3(self):
-        print("Leaving state3")
-        
-        
     def is_going_to_start(self, event):
         text = event.message.text
         return text.lower() == "start"
@@ -129,7 +86,7 @@ class TocMachine(GraphMachine):
             ),
         ]
         url = 'https://ideapit.com/article/img/201511/14484612361.gif'
-        send_button_message(event.reply_token, title, text, btn, url)    
+        send_button_message(event.reply_token, title, text, btn, url)
     
     def is_going_to_rice(self, event):
         text = event.message.text
@@ -164,5 +121,4 @@ class TocMachine(GraphMachine):
         send_text_message(reply_token, "https://www.google.com.tw/maps/search/%E6%B0%B4%E9%A4%83/@22.9981372,120.2236654,14z/data=!3m1!4b1?hl=zh-TW&authuser=0")
         self.go_back()
         
-    
         
