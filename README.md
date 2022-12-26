@@ -13,7 +13,7 @@
 ButtonsTemplate 按鈕樣板
 
 ## 使用教學
-
+```shell
 pip3 install pipenv
 
 pipenv --three
@@ -21,10 +21,10 @@ pipenv --three
 pipenv install
 
 pipenv shell
-
-將- LINE_CHANNEL_SECRET
-  - LINE_CHANNEL_ACCESS_TOKEN
-  輸入`.env`檔
+```
+將 LINE_CHANNEL_SECRET
+   LINE_CHANNEL_ACCESS_TOKEN
+   輸入`.env`檔
    
 
 4. install `ngrok`
