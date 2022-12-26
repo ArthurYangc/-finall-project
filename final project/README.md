@@ -1,26 +1,19 @@
-# TOC Project 2020
+# -finall-project
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/dc7fa47fcd809b99d087/maintainability)](https://codeclimate.com/github/NCKU-CCS/TOC-Project-2020/maintainability)
+## 前言
+有時我們會覺得特地去做一件事情很麻煩，這時如果有個line bot，讓你在回訊息時順便做一些日常會做到的事，感覺還滿方便的。
 
-[![Known Vulnerabilities](https://snyk.io/test/github/NCKU-CCS/TOC-Project-2020/badge.svg)](https://snyk.io/test/github/NCKU-CCS/TOC-Project-2020)
+## 構想
+先進到主頁面，之後分別選擇想要做的事，這裡有天氣查詢、吃飯查詢以及貓咪影片(大家都喜歡看貓咪影片)，之後便按照想做的事給你對應的幫助。
 
+## 環境
+- python 3.11.1
 
-Template Code for TOC Project 2020
+## 技術
+ButtonsTemplate 按鈕樣板
 
-A Line bot based on a finite state machine
-
-More details in the [Slides](https://hackmd.io/@TTW/ToC-2019-Project#) and [FAQ](https://hackmd.io/s/B1Xw7E8kN)
-
-## Setup
-
-### Prerequisite
-* Python 3.6
-* Pipenv
-* Facebook Page and App
-* HTTPS Server
-
-#### Install Dependency
-```sh
+## 使用教學
+```shell
 pip3 install pipenv
 
 pipenv --three
@@ -29,131 +22,76 @@ pipenv install
 
 pipenv shell
 ```
+將 LINE_CHANNEL_SECRET
+   LINE_CHANNEL_ACCESS_TOKEN
+   輸入`.env`檔
+   
+install `ngrok`
 
-* pygraphviz (For visualizing Finite State Machine)
-    * [Setup pygraphviz on Ubuntu](http://www.jianshu.com/p/a3da7ecc5303)
-	* [Note: macOS Install error](https://github.com/pygraphviz/pygraphviz/issues/100)
-
-
-#### Secret Data
-You should generate a `.env` file to set Environment Variables refer to our `.env.sample`.
-`LINE_CHANNEL_SECRET` and `LINE_CHANNEL_ACCESS_TOKEN` **MUST** be set to proper values.
-Otherwise, you might not be able to run your code.
-
-#### Run Locally
-You can either setup https server or using `ngrok` as a proxy.
-
-#### a. Ngrok installation
-* [ macOS, Windows, Linux](https://ngrok.com/download)
-
-or you can use Homebrew (MAC)
-```sh
-brew cask install ngrok
+```shell
+sudo snap install ngrok
 ```
-
-**`ngrok` would be used in the following instruction**
-
-```sh
+run `ngrok` to deploy Line Chat Bot locally
+```shell
 ngrok http 8000
 ```
-
-After that, `ngrok` would generate a https URL.
-
-#### Run the sever
-
-```sh
+execute app.py
+```shell
 python3 app.py
 ```
 
-#### b. Servo
+## 使用說明
+- 基本操作
+    - 以下指令皆可隨時輸入
+        - `start`
+            - 回到初始頁
+       
+- 架構圖
+    1. 輸入`start`開始使用生活小助手
+    2. 輸入功能 -> `天氣` `貓咪` `吃飯`
+   
+- `天氣` 
+    - 輸出天氣的網址
+       
+- `貓咪`
+    - 輸出貓咪的網址
 
-Or You can use [servo](http://serveo.net/) to expose local servers to the internet.
+- `吃飯`
+    - 選擇類型
+        - `飯`
+            - 輸出附近飯店的網址
+        - `麵`
+            - 輸出附近麵店的網址
+        - `水餃`
+            - 輸出附近水餃店的網址
+           
 
+## 使用示範
+![](https://github.com/ArthurYangc/-finall-project/blob/main/final%20project/picture/130688.jpg)
 
-## Finite State Machine
-![fsm](./img/show-fsm.png)
+![](https://github.com/ArthurYangc/-finall-project/blob/main/final%20project/picture/130694.jpg)
 
-## Usage
-The initial state is set to `user`.
+![](https://github.com/ArthurYangc/-finall-project/blob/main/final%20project/picture/130693.jpg)
 
-Every time `user` state is triggered to `advance` to another state, it will `go_back` to `user` state after the bot replies corresponding message.
+![](https://github.com/ArthurYangc/-finall-project/blob/main/final%20project/picture/130692.jpg)
 
-* user
-	* Input: "go to state1"
-		* Reply: "I'm entering state1"
+![](https://github.com/ArthurYangc/-finall-project/blob/main/final%20project/picture/130691.jpg)
 
-	* Input: "go to state2"
-		* Reply: "I'm entering state2"
+![](https://github.com/ArthurYangc/-finall-project/blob/main/final%20project/picture/130690.jpg)
 
-## Deploy
-Setting to deploy webhooks on Heroku.
+![](https://github.com/ArthurYangc/-finall-project/blob/main/final%20project/picture/130689.jpg)
 
-### Heroku CLI installation
+## FSM
+![](https://github.com/ArthurYangc/-finall-project/blob/main/final%20project/picture/fsm.png)
 
-* [macOS, Windows](https://devcenter.heroku.com/articles/heroku-cli)
+## state說明
+- user: 輸入start開始使用生活小助手
+- start: 選擇想要的功能
+- weather: 查詢天氣
+- cat: 找尋貓咪影片
+- eat: 選擇食物類型
+- rice: 查詢附近飯店
+- noodle: 查詢附近麵店
+- dumpling: 查詢附近水餃店
+- fsm: 輸出fsm圖
 
-or you can use Homebrew (MAC)
-```sh
-brew tap heroku/brew && brew install heroku
-```
-
-or you can use Snap (Ubuntu 16+)
-```sh
-sudo snap install --classic heroku
-```
-
-### Connect to Heroku
-
-1. Register Heroku: https://signup.heroku.com
-
-2. Create Heroku project from website
-
-3. CLI Login
-
-	`heroku login`
-
-### Upload project to Heroku
-
-1. Add local project to Heroku project
-
-	heroku git:remote -a {HEROKU_APP_NAME}
-
-2. Upload project
-
-	```
-	git add .
-	git commit -m "Add code"
-	git push -f heroku master
-	```
-
-3. Set Environment - Line Messaging API Secret Keys
-
-	```
-	heroku config:set LINE_CHANNEL_SECRET=your_line_channel_secret
-	heroku config:set LINE_CHANNEL_ACCESS_TOKEN=your_line_channel_access_token
-	```
-
-4. Your Project is now running on Heroku!
-
-	url: `{HEROKU_APP_NAME}.herokuapp.com/callback`
-
-	debug command: `heroku logs --tail --app {HEROKU_APP_NAME}`
-
-5. If fail with `pygraphviz` install errors
-
-	run commands below can solve the problems
-	```
-	heroku buildpacks:set heroku/python
-	heroku buildpacks:add --index 1 heroku-community/apt
-	```
-
-	refference: https://hackmd.io/@ccw/B1Xw7E8kN?type=view#Q2-如何在-Heroku-使用-pygraphviz
-
-## Reference
-[Pipenv](https://medium.com/@chihsuan/pipenv-更簡單-更快速的-python-套件管理工具-135a47e504f4) ❤️ [@chihsuan](https://github.com/chihsuan)
-
-[TOC-Project-2019](https://github.com/winonecheng/TOC-Project-2019) ❤️ [@winonecheng](https://github.com/winonecheng)
-
-Flask Architecture ❤️ [@Sirius207](https://github.com/Sirius207)
-
-[Line line-bot-sdk-python](https://github.com/line/line-bot-sdk-python/tree/master/examples/flask-echo)
