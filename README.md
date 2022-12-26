@@ -72,21 +72,13 @@ python3 app.py
 ## FSM
 ![](https://drive.google.com/drive/u/0/my-drive)
 ### state說明
-- user: 輸入fitness開始使用健身小幫手
-- input_gender: 輸入男生或女生
-- input_age: 輸入年齡(整數)
-- input_height: 輸入身高(整數)
-- input_weight: 輸入體重(整數)
-- input_days: 輸入一周運動天數(整數)
-- choose: 顯示個人資訊，並選擇要增肌還是減脂
-- muscle: 選擇要看增肌所需的熱量或是進入搜尋健身影片模式
-- show_video: 輸入想訓練的部位
-- get_video: 秀出youtube推薦的健身影片
-- thin: 選擇要低醣飲食還是生酮飲食
-- thin_type1: 說明何謂低醣飲食
-- thin_type2: 說明何謂生酮飲食
-- show_cal: 顯示使用者的BMR與TDEE
-- show_food: 根據使用者要增肌或低醣飲食或生酮飲食，顯示使用者一天三大營養素應該各吃多少
-- show_img: 根據使用者要增肌或低醣飲食或生酮飲食，回傳三大營養素比例的圓餅圖
-- query: 作者事先整理過衛生署公布的各食物營養素，使用者可輸入他想要查詢的食物，會回傳所有相關該關鍵字的食物三大營養素提供給作者參考
-- 
+- user: 輸入start開始使用生活小助手
+- start: 選擇想要的功能
+- weather: 查詢天氣
+- cat: 找尋貓咪影片
+- eat: 選擇食物類型
+- rice: 查詢附近飯店
+- noodle: 查詢附近麵店
+- dumpling: 查詢附近水餃店
+- fsm: 輸出fsm圖
+
